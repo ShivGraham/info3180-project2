@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block main %}
+    {% include 'flash_messages.html' %}
+    <div class="card">
+        <div class="card-header"></div>
+        <div class="card-body">
+            <img src="{{ url_for('static', filename = 'uploads/' + user.photo_name) }}" />
+            <div class="info">
+                <h2 class="card-title">{{ user.first_name }} {{ user.last_name }}</h2>
+                <img src="{{ url_for('static', filename = 'images/' + 'mail.png') }}" id="mailImg"/>
+                {{ user.email }}
+                <br/>
+                <img src="{{ url_for('static', filename = 'images/' + 'location.png') }}" id="locImg"/>
+                {{ user.location }}
+                <br/>
+                <img src="{{ url_for('static', filename = 'images/' + 'date.png') }}" id="dateImg"/>
+                {{ "Joined on" }} {{ user.created_on }}
+            </div>
+            <div id="about_me">
+                <h5 id="me">{{ "About Me" }}</h5>
+                <br/>
+                {{ user.bio }}
+            </div>
+            <button id="msgBtn">Send Message</button>
+            <button id="followBtn">Follow</button>
+        </div>
+    </div>
+{% endblock %}

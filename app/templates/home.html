@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block main %}
+<link rel="stylesheet"href='static/css/app.css'> 
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<div id="app">
+<app-header></app-header>
+<router-view></router-view>
+<br>
+<br>
+<app-footer></app-footer>
+ </div>
+{% endblock %}

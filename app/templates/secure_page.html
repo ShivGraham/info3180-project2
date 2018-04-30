@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% block main %}
+    {% include 'flash_messages.html' %}
+    
+    <h1>Secure Page</h1>
+    <hr>
+    <img src="{{ url_for('static', filename="images/ccs1147376766005.jpg") }}" id="image" />
+    <p> <strong> Congratulations, you are logged in and can access this secure page! </strong> </p>
+{% endblock %}

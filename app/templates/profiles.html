@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+<script type="text/javascript" src="app.js"></script>
+
+{% block main %}
+    {% include 'flash_messages.html' %}
+    
+    <h1 id="title">Profiles</h1>
+   
+    {% for user in users %}
+        <div class="card">
+            <div class="card-header"></div>
+            <div class="card-body">
+                <img src="{{ url_for('static', filename = 'uploads/' + user.photo_name) }}" />
+                <div class="info">
+                    <h4 class="card-title">{{ user.first_name }} {{ user.last_name }}</h4>
+                    <img src="{{ url_for('static', filename = 'images/' + 'icon.png') }}" id="iconImg"/>
+                    {{ user.gender }}
+                    <br/>
+                    <img src="{{ url_for('static', filename = 'images/' + 'location.png') }}" id="locImg"/>
+                    {{ user.location }}
+                </div>
+                {% set id = user.get_id() %}
+                <button id="viewBtn" onclick="location.href='{{ url_for('showProfile', userid=id) }}'">View Profile</button>
+            </div>
+        </div>
+    {% endfor %}
+{% endblock %}

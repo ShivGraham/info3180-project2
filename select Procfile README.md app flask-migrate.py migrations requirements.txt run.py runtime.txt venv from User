@@ -1,0 +1,10 @@
+            List of relations
+ Schema |      Name       | Type  | Owner 
+--------+-----------------+-------+-------
+ public | Likes           | table | admin
+ public | Post            | table | admin
+ public | User            | table | admin
+ public | alembic_version | table | admin
+ public | follows         | table | admin
+(5 rows)
+
