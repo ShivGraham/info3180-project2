@@ -464,7 +464,6 @@ const Profile = Vue.component('profile', {
                 <button class="btn btn-primary" id="follow-btn" v-cloak @click="followUser(user.id)">Follow</button>
             </div>
         </div>
-        <div> {{ posts }} Posts </div>
         <div> {{ followers }} Followers </div>
         <div class='container'>
          <div v-for="post in posts">
